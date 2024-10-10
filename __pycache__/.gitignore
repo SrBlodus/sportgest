@@ -1,0 +1,13 @@
+# Ignorar carpetas de compilación de Python
+__pycache__/
+*.pyc
+
+# Ignorar entornos virtuales
+env/
+venv/
+
+# Ignorar archivos de configuración local o temporales
+*.log
+*.sqlite3
+.vscode/
+instance/
