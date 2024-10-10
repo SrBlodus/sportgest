@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="31328ef7-64f9-4054-a9ad-88679eb20815" name="Changes" comment="" />
+    <list default="true" id="31328ef7-64f9-4054-a9ad-88679eb20815" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/models/persona.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/role.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,7 +46,7 @@
   "keyToString": {
     "Python.run.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "/home/ale/OneDrive/SPORTGEST",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -88,7 +97,7 @@
       <workItem from="1728509166450" duration="2264000" />
       <workItem from="1728511445757" duration="6438000" />
       <workItem from="1728518610042" duration="368000" />
-      <workItem from="1728594681392" duration="1151000" />
+      <workItem from="1728594681392" duration="6473000" />
     </task>
     <servers />
   </component>
