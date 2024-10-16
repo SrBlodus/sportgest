@@ -1,0 +1,38 @@
+<!-- app/templates/personas/listar.html -->
+{% extends 'base.html' %}
+
+{% block title %}Listado de Personas{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Listado de Personas</h1>
+    <a href="{{ url_for('personas.agregar_persona') }}" class="btn btn-primary">Agregar Persona</a>
+    <table class="table mt-4">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Correo</th>
+                <th>Dirección</th>
+                <th>Teléfono</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for persona in personas %}
+                <tr>
+                    <td>{{ persona.nombre }}</td>
+                    <td>{{ persona.correo }}</td>
+                    <td>{{ persona.direccion }}</td>
+                    <td>{{ persona.telefono }}</td>
+                    <td>
+                        <a href="{{ url_for('personas.editar_persona', id=persona.id) }}" class="btn btn-warning">Editar</a>
+                        <form action="{{ url_for('personas.eliminar_persona', id=persona.id) }}" method="POST" style="display:inline;">
+                            <button type="submit" class="btn btn-danger">Eliminar</button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

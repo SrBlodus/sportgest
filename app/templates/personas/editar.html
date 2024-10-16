@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% block title %}Editar Persona{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Editar Persona</h1>
+    <form method="POST">
+        <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" value="{{ nombre or persona.nombre }}" required>
+        </div>
+        <div class="form-group">
+            <label for="apellidos">Apellidos</label>
+            <input type="text" class="form-control" id="apellidos" name="apellidos" value="{{ apellidos or persona.apellidos }}" required>
+        </div>
+        <div class="form-group">
+            <label for="direccion">Dirección</label>
+            <input type="text" class="form-control" id="direccion" name="direccion" value="{{ direccion or persona.direccion }}">
+        </div>
+        <div class="form-group">
+            <label for="ciudad">Ciudad</label>
+            <input type="text" class="form-control" id="ciudad" name="ciudad" value="{{ ciudad or persona.ciudad }}">
+        </div>
+        <div class="form-group">
+            <label for="barrio">Barrio</label>
+            <input type="text" class="form-control" id="barrio" name="barrio" value="{{ barrio or persona.barrio }}">
+        </div>
+        <div class="form-group">
+            <label for="numero_documento">Número de Documento</label>
+            <input type="text" class="form-control" id="numero_documento" name="numero_documento" value="{{ numero_documento or persona.numero_documento }}" required>
+        </div>
+        <div class="form-group">
+            <label for="tipo_documento">Tipo de Documento</label>
+            <select class="form-control" id="tipo_documento" name="tipo_documento" required>
+                {% for tipo in tipos_documento %}
+                    <option value="{{ tipo.id }}" {% if tipo.id == persona.tipo_documento_id %}selected{% endif %}>{{ tipo.nombre }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="sexo">Sexo</label>
+            <select class="form-control" id="sexo" name="sexo" required>
+                {% for s in sexos %}
+                    <option value="{{ s.id }}" {% if s.id == persona.sexo_id %}selected{% endif %}>{{ s.nombre }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="nacionalidad">Nacionalidad</label>
+            <select class="form-control" id="nacionalidad" name="nacionalidad" required>
+                {% for n in nacionalidades %}
+                    <option value="{{ n.id }}" {% if n.id == persona.nacionalidad_id %}selected{% endif %}>{{ n.nombre }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="estado_civil">Estado Civil</label>
+            <select class="form-control" id="estado_civil" name="estado_civil" required>
+                {% for e in estados_civiles %}
+                    <option value="{{ e.id }}" {% if e.id == persona.estado_civil_id %}selected{% endif %}>{{ e.nombre }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="correo">Correo Electrónico</label>
+            <input type="email" class="form-control" id="correo" name="correo" value="{{ correo or persona.correo }}" required>
+        </div>
+        <div class="form-group">
+            <label for="fecha_nacimiento">Fecha de Nacimiento</label>
+            <input type="date" class="form-control" id="fecha_nacimiento" name="fecha_nacimiento" value="{{ fecha_nacimiento or persona.fecha_nacimiento }}" required>
+        </div>
+        <div class="form-group">
+            <label for="telefono">Número de Teléfono</label>
+            <input type="text" class="form-control" id="telefono" name="telefono" value="{{ telefono or persona.telefono }}">
+        </div>
+        <div class="form-group">
+            <label for="tipos">Tipo de Persona</label><br>
+            {% for tipo in tipos %}
+                <input type="checkbox" name="tipos" value="{{ tipo.id }}" {% if tipo.id in tipos_ids %}checked{% endif %}> {{ tipo.nombre }}<br>
+            {% endfor %}
+        </div>
+        <button type="submit" class="btn btn-primary">Actualizar</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{% block title %}Agregar Persona{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Agregar Persona</h1>
+    <form method="POST">
+        <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" value="{{ nombre }}" required>
+        </div>
+        <div class="form-group">
+            <label for="apellidos">Apellidos</label>
+            <input type="text" class="form-control" id="apellidos" name="apellidos" value="{{ apellidos }}" required>
+        </div>
+        <div class="form-group">
+            <label for="direccion">Dirección</label>
+            <input type="text" class="form-control" id="direccion" name="direccion" value="{{ direccion }}">
+        </div>
+        <div class="form-group">
+            <label for="ciudad">Ciudad</label>
+            <input type="text" class="form-control" id="ciudad" name="ciudad" value="{{ ciudad }}">
+        </div>
+        <div class="form-group">
+            <label for="barrio">Barrio</label>
+            <input type="text" class="form-control" id="barrio" name="barrio" value="{{ barrio }}">
+        </div>
+        <div class="form-group">
+            <label for="numero_documento">Número de Documento</label>
+            <input type="text" class="form-control" id="numero_documento" name="numero_documento" value="{{ numero_documento }}" required>
+        </div>
+        <div class="form-group">
+            <label for="tipo_documento">Tipo de Documento</label>
+            <select class="form-control" id="tipo_documento" name="tipo_documento" required>
+                {% for tipo in tipos_documento %}
+                    <option value="{{ tipo.id }}" {% if tipo.id == tipo_documento %}selected{% endif %}>{{ tipo.nombre }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="sexo">Sexo</label>
+            <select class="form-control" id="sexo" name="sexo" required>
+                {% for s in sexos %}
+                    <option value="{{ s.id }}" {% if s.id == sexo %}selected{% endif %}>{{ s.nombre }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="nacionalidad">Nacionalidad</label>
+            <select class="form-control" id="nacionalidad" name="nacionalidad" required>
+                {% for n in nacionalidades %}
+                    <option value="{{ n.id }}" {% if n.id == nacionalidad %}selected{% endif %}>{{ n.nombre }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="estado_civil">Estado Civil</label>
+            <select class="form-control" id="estado_civil" name="estado_civil" required>
+                {% for e in estados_civiles %}
+                    <option value="{{ e.id }}" {% if e.id == estado_civil %}selected{% endif %}>{{ e.nombre }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="correo">Correo Electrónico</label>
+            <input type="email" class="form-control" id="correo" name="correo" value="{{ correo }}" required>
+        </div>
+        <div class="form-group">
+            <label for="fecha_nacimiento">Fecha de Nacimiento</label>
+            <input type="date" class="form-control" id="fecha_nacimiento" name="fecha_nacimiento" value="{{ fecha_nacimiento }}" required>
+        </div>
+        <div class="form-group">
+            <label for="telefono">Número de Teléfono</label>
+            <input type="text" class="form-control" id="telefono" name="telefono" value="{{ telefono }}">
+        </div>
+
+        <div class="form-group">
+            <label for="tipos">Tipo de Persona</label><br>
+            {% for tipo in tipos %}
+                <input type="checkbox" name="tipos" value="{{ tipo.id }}" {% if tipo.id in tipos_seleccionados %}checked{% endif %}> {{ tipo.nombre }}<br>
+            {% endfor %}
+        </div>
+
+        <button type="submit" class="btn btn-primary">Agregar</button>
+    </form>
+</div>
+{% endblock %}
+

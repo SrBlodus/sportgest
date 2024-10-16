@@ -6,7 +6,7 @@ class Role(db.Model):
     name = db.Column(db.String(64), unique=True, nullable=False)
 
     # Relación con el modelo User
-    users = db.relationship('User', backref='role')
+    users = db.relationship('User', backref='role', lazy=True)
 
     def __repr__(self):
         return f'<Role {self.name}>'
